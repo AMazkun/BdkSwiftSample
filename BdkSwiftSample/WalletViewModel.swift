@@ -74,13 +74,13 @@ class WalletViewModel: ObservableObject {
             
             let db = DatabaseConfig.memory
             do {
-                if words.isEmpty {
+                if self.words.isEmpty {
                     let genKey = Mnemonic.init(wordCount: WordCount.words12);
-                    let words = genKey.asString();
+                    self.words = genKey.asString();
                     self.balanceText = "New Wallet"
-                    debugPrint(words)
+                    debugPrint(self.words)
                 }
-                let mn = try Mnemonic.fromString(mnemonic: words)
+                let mn = try Mnemonic.fromString(mnemonic: self.words)
                 debugPrint(mn.asString())
                 let deK =  DescriptorSecretKey(network: Network.testnet, mnemonic: mn, password: "")
                 debugPrint(deK.asString())
@@ -96,6 +96,7 @@ class WalletViewModel: ObservableObject {
                 }
             } catch {
                 do {
+                    // Old Example Wallet restoring by Descriptor
                     let descriptor = try Descriptor.init(descriptor: "wpkh(tprv8ZgxMBicQKsPeSitUfdxhsVaf4BXAASVAbHypn2jnPcjmQZvqZYkeqx7EHQTWvdubTSDa5ben7zHC7sUsx4d8tbTvWdUtHzR8uhHg2CW7MT/*)", network: Network.testnet)
                     let electrum = ElectrumConfig(url: "ssl://electrum.blockstream.info:60002", socks5: nil, retry: 5, timeout: nil, stopGap: 10, validateDomain: true)
                     let blockchainConfig = BlockchainConfig.electrum(config: electrum)
