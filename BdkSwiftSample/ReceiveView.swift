@@ -72,6 +72,9 @@ struct ReceiveView: View {
             }
             Spacer()
             BasicButton(action: getAddress, text: "Generate new address", color: "Green")
+            BasicButton(action: {
+                UIPasteboard.general.string = address
+            }, text: "Copy address", color: "Green")
         }
         .navigationTitle("Receive Address")
         .modifier(BackButtonMod())

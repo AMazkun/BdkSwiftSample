@@ -6,32 +6,40 @@
 //
 
 import SwiftUI
+import BitcoinDevKit
 
 struct RecoverView: View {
-    @State private var words = Array(repeating: "", count: 12)
-    
+    @EnvironmentObject var viewModel: WalletViewModel
+    @State private var goHome = false
+
     var body: some View {
         BackgroundWrapper {
-            ScrollView {
-                ForEach(0..<12) { i in
-                    TextField(
-                    "Word \(i + 1)",
-                    text: $words[i]
-                    )
-                }
-                .disableAutocorrection(true).padding(.bottom, 10)
-                .textInputAutocapitalization(.never)
-                BasicButton(action: {}, text: "Recover")
+            VStack{
+                Text("Input 12 Mnemonic words below:")
+                    .font(.caption)
+                TextEditor(text: $viewModel.words)
+                    .font(.largeTitle)
+                    .disableAutocorrection(true).padding(.bottom, 10)
+                    .textInputAutocapitalization(.never)
+
+                NavigationLink(destination: WalletView(), isActive: $goHome) { EmptyView() }
+                BasicButton(action: {
+                    viewModel.newWalletConnection()
+                    goHome = true
+                }, text: "Get Restore")
+                .textFieldStyle(.roundedBorder)
             }
             .textFieldStyle(.roundedBorder)
         }
-        .navigationTitle("12 Words")
+        .navigationTitle("Restore Wallet with Mnemonic")
         .modifier(BackButtonMod())
     }
 }
 
 struct RecoverView_Previews: PreviewProvider {
+    static var viewModel = WalletViewModel()
+
     static var previews: some View {
-        RecoverView()
+        RecoverView().environmentObject(viewModel)
     }
 }

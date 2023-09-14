@@ -28,6 +28,7 @@
 		6EA8DBC8275BD796001B935E /* RecoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8DBC2275BD796001B935E /* RecoverView.swift */; };
 		6EA8DBC9275BD796001B935E /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8DBC3275BD796001B935E /* ReceiveView.swift */; };
 		6EA8DBCB275BD87E001B935E /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8DBCA275BD87E001B935E /* WalletViewModel.swift */; };
+		84D924B42AB2FBB30028C8D8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 84D924B32AB2FBB30028C8D8 /* README.md */; };
 		AA1684AE28669EF100860C6E /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = AA1684AD28669EF100860C6E /* CodeScanner */; };
 		AAC86C2F2A00492000EBAC79 /* BitcoinDevKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAC86C2E2A00492000EBAC79 /* BitcoinDevKit */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		6EA8DBC2275BD796001B935E /* RecoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverView.swift; sourceTree = "<group>"; };
 		6EA8DBC3275BD796001B935E /* ReceiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveView.swift; sourceTree = "<group>"; };
 		6EA8DBCA275BD87E001B935E /* WalletViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		84D924B32AB2FBB30028C8D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA635F5329CE47E70020D578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		6EA8DB8E275BD298001B935E = {
 			isa = PBXGroup;
 			children = (
+				84D924B32AB2FBB30028C8D8 /* README.md */,
 				AACEF60B29A00A7600D6AF44 /* Packages */,
 				6EA8DB99275BD298001B935E /* BdkSwiftSample */,
 				6EA8DB98275BD298001B935E /* Products */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D924B42AB2FBB30028C8D8 /* README.md in Resources */,
 				6EA8DBA2275BD299001B935E /* Preview Assets.xcassets in Resources */,
 				6EA8DB9F275BD299001B935E /* Assets.xcassets in Resources */,
 			);

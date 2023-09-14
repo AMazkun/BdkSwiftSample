@@ -17,6 +17,8 @@ struct BalanceDisplay: View {
             .foregroundColor(Color.white)
             .padding(10)
             .frame(maxWidth: .infinity)
+            .scaledToFit()
+            .minimumScaleFactor(0.1)
             .background(Color("Shadow"))
     }
 }

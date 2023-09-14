@@ -35,11 +35,15 @@ struct SendReceiveButtons: View {
                 let tx = details.psbt.extractTx()
                 try blockchain.broadcast(transaction: tx)
                 let txid = details.psbt.txid()
-                print(txid)
+                debugPrint(txid.description)
+                debugPrint(details.transactionDetails.transaction.debugDescription)
+                return [txid.description, (details.transactionDetails.fee?.description ?? "na")]
             } catch let error {
-                print(error)
+                debugPrint(error.localizedDescription)
+                return [error.localizedDescription, "na"]
             }
         }), isActive: $goToSend) { EmptyView() }
+        
         GeometryReader { geometry in
             HStack(spacing: 10) {
                 let w = getWidth(w: geometry.size.width)

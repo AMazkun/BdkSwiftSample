@@ -14,3 +14,21 @@ Check these out:
  - [bdk (where it all begins!)](https://github.com/bitcoindevkit/bdk)
  - [bdk-ffi](https://github.com/bitcoindevkit/bdk-ffi)
  - [bdk-swift](https://github.com/bitcoindevkit/bdk-swift)
+
+#Updated: 09/14/2023
+Features:
+- completed Create new Wallet by Mnemonic generated
+- completing restoring old Wallet with Mnemonic
+- coping own Wallet address
+- estimating fee for transaction (it's very depends on traffic, but just for fun)
+
+Improvements:
+- update balance after sending coins
+- showing last operation fee and hash
+- print changed to debugprint (that works)
+
+Known Issues:
+- example Mnemonic cause CRC error, not changed, but adding restoring old Wallet by Descriptor
+
+Useful (receive test coins for your Wallet btc-testnet):
+https://coinfaucet.eu/en/btc-testnet/

@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct MnemonicView: View {
-    var words: String
+    @EnvironmentObject var viewModel: WalletViewModel
     @State private var goHome = false
+    @State var words: String = "Tap here to generate new 12 Mnemonic words";
     
     var body: some View {
         BackgroundWrapper {
             Spacer()
-            Text(words).textStyle(BasicTextStyle(big: true, white: true)).contextMenu {
-                Button(action: {
-                    UIPasteboard.general.string = self.words}) {
-                        Text("Copy to clipboard")
-                    }
-            }
+            Text(words).textStyle(BasicTextStyle(big: true, white: true))
+                .onTapGesture {
+                    words = viewModel.generateNewMnemonic()
+                }
             Spacer()
             NavigationLink(destination: WalletView(), isActive: $goHome) { EmptyView() }
-            BasicButton(action: { () in goHome = true}, text: "Back to Wallet")
+            BasicButton(action: { () in
+                UIPasteboard.general.string = words
+                viewModel.newWalletConnection(words)
+                goHome = true
+            }, text: "Copy Mnemonic, Use New Wallet")
         }
         .navigationTitle("Mnemonic")
         .modifier(BackButtonMod())
@@ -30,7 +33,8 @@ struct MnemonicView: View {
 }
 
 struct RecoveryView_Previews: PreviewProvider {
+    static var viewModel = WalletViewModel()
     static var previews: some View {
-        MnemonicView(words: "clutch solar sand travel vital fitness hand piece dial flag garment grant")
+        MnemonicView().environmentObject(viewModel)
     }
 }
