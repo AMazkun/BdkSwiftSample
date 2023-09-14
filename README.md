@@ -1,9 +1,9 @@
 # Bdk Swift Sample app
 
 
-| home                                                                                                     | send                                                                                                  |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| ![](https://github.com/AMazkun/BdkSwiftSample/blob/main/Screenshot30.png) | ![](https://github.com/AMazkun/BdkSwiftSample/blob/main/Screenshot18.png) |
+| home                                                                                 | send                                                                              | create wallet                                                                    |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| ![](https://github.com/AMazkun/BdkSwiftSample/blob/main/Screenshot30.png) | ![](https://github.com/AMazkun/BdkSwiftSample/blob/main/Screenshot18.png) | ![](https://github.com/AMazkun/BdkSwiftSample/blob/main/Screenshot48.png) |
 
 This project is an example app / testbed for `bdk` (Bitcoin Dev Kit) Swift bindings. Features include syncing to testnet, sending and receiving fake Bitcoin, and QR code scanning. It started out life as a hackathon project by @futurepaul and @konjoinfinity.
 
