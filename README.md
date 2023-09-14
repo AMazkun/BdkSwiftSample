@@ -27,6 +27,7 @@ Features:
 
 Improvements:
 - update balance after sending coins
+- new input data validation algorithm in send task
 - showing last operation fee and hash
 - print changed to debugprint (that works)
 
